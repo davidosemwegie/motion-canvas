@@ -7,7 +7,6 @@ import {shake} from '../animations';
 import {
   Bug,
   HourglassBottom,
-  MotionCanvas,
   Movie,
   School,
   Science,
@@ -16,6 +15,8 @@ import {
 } from '../icons';
 import {Badge, Space, Tab, TabGroup, TabLink, Tabs} from '../tabs';
 import styles from './Navigation.module.scss';
+
+import logoMutedSvg from '../icons/logo-muted.svg';
 
 export function Navigation() {
   const {project, logger} = useApplication();
@@ -44,7 +45,11 @@ export function Navigation() {
         id="project-selection-link"
         href={window.location.pathname === '/' ? undefined : '../'}
       >
-        <MotionCanvas />
+        <img
+          src={logoMutedSvg}
+          alt="Umbrella Mode Logo"
+          style={{width: '100%', height: '100%'}}
+        />
       </TabLink>
       <TabGroup tab={sidebar.current.value} setTab={tab => sidebar.set(tab)}>
         <Tab
