@@ -1,5 +1,6 @@
 import markdown from '@motion-canvas/internal/vite/markdown-literals';
 import preact from '@preact/preset-vite';
+import path from 'path';
 import {defineConfig} from 'vite';
 import ffmpeg from '../ffmpeg/server';
 import motionCanvas from '../vite-plugin/src/main';
@@ -17,7 +18,22 @@ export default defineConfig({
       },
       {
         find: '@motion-canvas/ffmpeg/lib/client',
-        replacement: '@motion-canvas/ffmpeg/client',
+        replacement: '../ffmpeg/client/index.ts',
+      },
+      {
+        find: /^\/ffmpeg\/client\/index\.ts$/,
+        replacement: path.resolve(__dirname, '../ffmpeg/client/index.ts'),
+      },
+      {
+        find: '@motion-canvas/2d/src/lib/jsx-runtime',
+        replacement: path.resolve(__dirname, '../2d/src/lib/jsx-runtime.ts'),
+      },
+      {
+        find: '@motion-canvas/2d/src/lib/jsx-dev-runtime',
+        replacement: path.resolve(
+          __dirname,
+          '../2d/src/lib/jsx-dev-runtime.ts',
+        ),
       },
       {
         find: /@motion-canvas\/2d(\/lib)?/,
@@ -34,6 +50,32 @@ export default defineConfig({
         /packages\/2d\/src\/editor\/(.*)\.tsx?$/,
       ],
     }),
+    {
+      name: 'resolve-jsx-runtime',
+      resolveId(id) {
+        if (id === '@motion-canvas/2d/src/lib/jsx-runtime') {
+          return path.resolve(__dirname, '../2d/src/lib/jsx-runtime.ts');
+        }
+        if (id === '@motion-canvas/2d/src/lib/jsx-dev-runtime') {
+          return path.resolve(__dirname, '../2d/src/lib/jsx-dev-runtime.ts');
+        }
+        if (
+          id === '@motion-canvas/ffmpeg/lib/client' ||
+          id === '/ffmpeg/client/index.ts'
+        ) {
+          return path.resolve(__dirname, '../ffmpeg/client/index.ts');
+        }
+      },
+      configureServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url === '/ffmpeg/client/index.ts') {
+            req.url =
+              '/@fs/' + path.resolve(__dirname, '../ffmpeg/client/index.ts');
+          }
+          next();
+        });
+      },
+    },
     motionCanvas({
       buildForEditor: true,
     }),
