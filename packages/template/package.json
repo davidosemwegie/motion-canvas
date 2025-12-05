@@ -11,11 +11,11 @@
     "build": "tsc && vite build"
   },
   "dependencies": {
-    "@motion-canvas/core": "*",
-    "@motion-canvas/2d": "*"
+    "@motion-canvas/core": "workspace:*",
+    "@motion-canvas/2d": "workspace:*"
   },
   "devDependencies": {
-    "@motion-canvas/ui": "*",
-    "@motion-canvas/vite-plugin": "*"
+    "@motion-canvas/ui": "workspace:*",
+    "@motion-canvas/vite-plugin": "workspace:*"
   }
 }

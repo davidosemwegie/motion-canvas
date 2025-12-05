@@ -5,7 +5,6 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install",
     "core:dev": "npm run dev -w packages/core",
     "core:build": "npm run build -w packages/core",
     "core:bundle": "npm run bundle -w packages/core",

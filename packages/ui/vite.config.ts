@@ -4,12 +4,17 @@ import {defineConfig} from 'vite';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
+  assetsInclude: ['**/*.md'],
   resolve: {
     alias: {
       // eslint-disable-next-line @typescript-eslint/naming-convention
       '@motion-canvas/ui': '/src/main.tsx',
       // eslint-disable-next-line @typescript-eslint/naming-convention
       '@motion-canvas/2d/editor': '@motion-canvas/2d/src/editor',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      '@motion-canvas/core': '@motion-canvas/core/src',
+      // eslint-disable-next-line @typescript-eslint/naming-convention
+      '@motion-canvas/template': '@motion-canvas/template/src',
     },
   },
   build: {
@@ -31,6 +36,7 @@ export default defineConfig({
     }),
     {
       name: 'copy-files',
+      apply: 'build',
       async buildStart() {
         this.emitFile({
           type: 'asset',
