@@ -8,14 +8,14 @@
     "test": "vitest"
   },
   "dependencies": {
-    "@motion-canvas/2d": "*",
-    "@motion-canvas/core": "*",
+    "@motion-canvas/2d": "workspace:*",
+    "@motion-canvas/core": "workspace:*",
     "jest-image-snapshot": "^6.2.0",
     "playwright": "^1.46.1",
     "vitest": "^0.34.6"
   },
   "devDependencies": {
-    "@motion-canvas/ui": "*",
-    "@motion-canvas/vite-plugin": "*"
+    "@motion-canvas/ui": "workspace:*",
+    "@motion-canvas/vite-plugin": "workspace:*"
   }
 }

@@ -8,8 +8,8 @@
   "bugs": "https://github.com/motion-canvas/motion-canvas/issues",
   "license": "MIT",
   "scripts": {
-    "dev": "tspc -p tsconfig.build.json -w",
-    "build": "tspc -p tsconfig.build.json",
+    "dev": "../internal/node_modules/.bin/tspc -p tsconfig.build.json -w",
+    "build": "../internal/node_modules/.bin/tspc -p tsconfig.build.json",
     "bundle": "rollup -c rollup.config.mjs",
     "test": "vitest"
   },
@@ -29,7 +29,7 @@
     "chroma-js": "2.4.2"
   },
   "devDependencies": {
-    "@motion-canvas/internal": "0.0.0",
+    "@motion-canvas/internal": "workspace:*",
     "jsdom": "^22.1.0",
     "vitest": "^0.34.6"
   }

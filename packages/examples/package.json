@@ -7,11 +7,11 @@
     "build": "tsc && vite build --base /examples/"
   },
   "dependencies": {
-    "@motion-canvas/2d": "*",
-    "@motion-canvas/core": "*"
+    "@motion-canvas/2d": "workspace:*",
+    "@motion-canvas/core": "workspace:*"
   },
   "devDependencies": {
-    "@motion-canvas/ui": "*",
-    "@motion-canvas/vite-plugin": "*"
+    "@motion-canvas/ui": "workspace:*",
+    "@motion-canvas/vite-plugin": "workspace:*"
   }
 }

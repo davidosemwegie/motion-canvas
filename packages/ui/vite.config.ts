@@ -4,6 +4,7 @@ import {defineConfig} from 'vite';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
+  assetsInclude: ['**/*.md'],
   resolve: {
     alias: {
       // eslint-disable-next-line @typescript-eslint/naming-convention

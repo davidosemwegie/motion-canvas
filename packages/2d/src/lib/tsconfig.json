@@ -4,6 +4,11 @@
     "types": ["node"],
     "jsx": "react-jsx",
     "jsxImportSource": "@motion-canvas/2d/src/lib",
+    "baseUrl": ".",
+    "paths": {
+      "@motion-canvas/2d/src/lib/jsx-runtime": ["./jsx-runtime.ts"],
+      "@motion-canvas/2d/src/lib/jsx-dev-runtime": ["./jsx-dev-runtime.ts"]
+    },
     "plugins": [
       {
         "transform": "@motion-canvas/internal/transformers/markdown-literals.js"

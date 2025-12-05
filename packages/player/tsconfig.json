@@ -12,7 +12,6 @@
     "useDefineForClassFields": true,
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
-    "types": ["node"],
     "lib": ["DOM", "DOM.Iterable", "ESNext"]
   },
   "include": ["src"]

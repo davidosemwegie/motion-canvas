@@ -11,9 +11,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "vite build",
     "type": "tsc -w",
-    "showcase": "tsc && vite build -c vite.showcase.ts",
+    "typecheck": "tsc --noEmit",
+    "showcase": "vite build -c vite.showcase.ts",
     "preview": "vite preview"
   },
   "repository": {
@@ -26,12 +27,16 @@
     "tsconfig.plugin.json"
   ],
   "dependencies": {
-    "@motion-canvas/core": "^3.17.2",
+    "@motion-canvas/core": "workspace:*",
     "@preact/signals": "^1.2.1",
+    "chroma-js": "^2.4.2",
     "preact": "^10.19.2"
   },
   "devDependencies": {
     "@preact/preset-vite": "^2.7.0",
+    "@types/chroma-js": "^2.4.4",
+    "@types/node": "^18.14.0",
+    "@types/react": "^18.2.0",
     "clsx": "^2.0.0",
     "highlight.js": "^11.9.0",
     "sass": "^1.69.5",

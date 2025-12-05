@@ -20,10 +20,10 @@
     "url": "https://github.com/motion-canvas/motion-canvas.git"
   },
   "devDependencies": {
-    "@motion-canvas/2d": "^3.17.2",
-    "@motion-canvas/core": "^3.17.2",
-    "@motion-canvas/ui": "^3.17.2",
-    "@motion-canvas/vite-plugin": "^3.17.2"
+    "@motion-canvas/2d": "workspace:*",
+    "@motion-canvas/core": "workspace:*",
+    "@motion-canvas/ui": "workspace:*",
+    "@motion-canvas/vite-plugin": "workspace:*"
   },
   "dependencies": {
     "minimist": "^1.2.8",

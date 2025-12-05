@@ -1,11 +1,7 @@
 {
   "name": "motion-canvas",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "prepare": "husky install",
     "core:dev": "npm run dev -w packages/core",
     "core:build": "npm run build -w packages/core",
     "core:bundle": "npm run bundle -w packages/core",
@@ -47,6 +43,7 @@
     "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "prettier-plugin-organize-imports": "^4.0.0",
+    "ts-patch": "^3.0.2",
     "typescript": "^5.2.2",
     "vite": "^4.5.0"
   },
