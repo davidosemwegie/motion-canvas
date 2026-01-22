@@ -1,0 +1,24 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile: showcase at bottom (using order) */
+@media screen and (max-width: 639px) {
+  .homeContainer {
+    flex-direction: column;
+  }
+
+  /* Header stays at top (order: 0 default) */
+  /* Showcase moves to bottom */
+  .homeContainer > :last-child {
+    order: 1;
+  }
+}
+
+/* Desktop: showcase in middle, centered layout */
+@media screen and (min-width: 960px) {
+  .homeContainer {
+    align-items: center;
+  }
+}
