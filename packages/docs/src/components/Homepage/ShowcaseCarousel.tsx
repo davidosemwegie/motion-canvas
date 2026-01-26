@@ -10,7 +10,7 @@ interface ShowcaseItem {
   link?: string;
 }
 
-const showcaseItems: ShowcaseItem[] = [
+const ShowcaseItems: ShowcaseItem[] = [
   {
     id: '1',
     title: 'Animated Diagrams',
@@ -69,12 +69,12 @@ export default function ShowcaseCarousel(): JSX.Element {
   }, []);
 
   const goToPrevious = () => {
-    const newIndex = activeIndex > 0 ? activeIndex - 1 : showcaseItems.length - 1;
+    const newIndex = activeIndex > 0 ? activeIndex - 1 : ShowcaseItems.length - 1;
     scrollToIndex(newIndex);
   };
 
   const goToNext = () => {
-    const newIndex = activeIndex < showcaseItems.length - 1 ? activeIndex + 1 : 0;
+    const newIndex = activeIndex < ShowcaseItems.length - 1 ? activeIndex + 1 : 0;
     scrollToIndex(newIndex);
   };
 
@@ -103,7 +103,7 @@ export default function ShowcaseCarousel(): JSX.Element {
         </button>
 
         <div className={styles.carousel} ref={carouselRef}>
-          {showcaseItems.map((item) => (
+          {ShowcaseItems.map((item) => (
             <div key={item.id} className={styles.carouselItem}>
               <div className={styles.videoWrapper}>
                 {item.videoId ? (
@@ -143,7 +143,7 @@ export default function ShowcaseCarousel(): JSX.Element {
       </div>
 
       <div className={styles.indicators}>
-        {showcaseItems.map((_, index) => (
+        {ShowcaseItems.map((_, index) => (
           <button
             key={index}
             className={`${styles.indicator} ${index === activeIndex ? styles.active : ''}`}
